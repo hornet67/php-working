@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Home</title>
+</head>
+<body>
+
+------------------------------------------------------
+    <?php 
+
+   
+    $books = [
+        "The Apple in the Dark",
+        "Hail Mary" ,
+        "The Lord of the Rings"
+    ];
+
+    $authers = [
+         "Jeanette Winterson",
+         "Cory Doctorow",
+         "J.R.R. Tolkien"
+    ];
+
+  
+  $books = [
+        [
+            "title"=>"To Kill a Mockingbird",
+            "author"=>"Harper Lee",
+            "released_date"=>"1960-07-11",
+            "url"=>"https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird"
+        ],
+        [
+            "title"=>"1984",
+            "author"=>"George Orwell",
+            "released_date"=>"1949-06-08",
+            "url"=>"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four"
+        ],
+        [
+            "title"=>"The Great Gatsby",
+            "author"=>"F. Scott Fitzgerald",
+            "released_date"=>"1925-04-10",
+            "url"=>"https://en.wikipedia.org/wiki/The_Great_Gatsby"
+        ]
+    ]
+   
+function booknfilter($books, $auther){
+    $filtered_books = [];
+
+    foreach($books as $book){
+        if($book['author'] === $auther){
+            $filtered_books[] = $book;
+        }
+    }
+
+    return $filtered_books;
+}
+
+    ?>
+---------------------------------------------------------
+
+<h1> The list of books I read  are gien  below:</h1>
+
+
+<ul>
+    <?php foreach ($books as $book): ?>
+        <?php foreach ($authers as $auther) : ?>
+
+            <li><?= $book ?>  ==> <?= $auther ?> </li>
+
+        <?php endforeach; ?> 
+    <?php endforeach; ?>
+
+</ul>
+
+
+
+
+
+</body>
+</html>
