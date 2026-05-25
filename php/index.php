@@ -37,13 +37,21 @@
             "released_date"=>"1949-06-08",
             "url"=>"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four"
         ],
+
+        [
+            "title"=>"Hell on the Border",
+            "author"=>"George Orwell",
+            "released_date"=>"1947-06-08",
+            "url"=>"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four"
+        ],
+
         [
             "title"=>"The Great Gatsby",
             "author"=>"F. Scott Fitzgerald",
             "released_date"=>"1925-04-10",
             "url"=>"https://en.wikipedia.org/wiki/The_Great_Gatsby"
         ]
-    ]
+    ];
    
 function booknfilter($books, $auther){
     $filtered_books = [];
@@ -60,23 +68,27 @@ function booknfilter($books, $auther){
     ?>
 ---------------------------------------------------------
 
-<h1> The list of books I read  are gien  below:</h1>
-
+<h1>The list of books I read are given below:</h1>
 
 <ul>
-    <?php foreach ($books as $book): ?>
-        <?php foreach ($authers as $auther) : ?>
 
-            <li><?= $book ?>  ==> <?= $auther ?> </li>
+<?php foreach(booknfilter($books,"George Orwell") as $book): ?>
 
-        <?php endforeach; ?> 
-    <?php endforeach; ?>
+    <li>
+        <strong>Title:</strong> <?= $book["title"] ?><br>
+        <strong>Author:</strong> <?= $book["author"] ?><br>
+        <strong>Released:</strong> <?= $book["released_date"] ?><br>
+        <strong>URL:</strong>
+        <a href="<?= $book["url"] ?>">
+            <?= $book["url"] ?>
+        </a>
+    </li>
+
+    <br>
+
+<?php endforeach; ?>
 
 </ul>
-
-
-
-
 
 </body>
 </html>
