@@ -1,0 +1,2 @@
+here we just arrange the php file and seperate the logic code from the index.view.php file and keep all the 
+php logic in the index.html and use required keyword to connect them
